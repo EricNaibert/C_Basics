@@ -7,13 +7,13 @@ int main() {
     printf("|||||||||||||||||||||||||||||||||||\n");
 
     int secretNumber = 42;
-    int chute;
+    int guess;
 
-    printf("Whats your guess?\n");
-    scanf("%d", &chute);
+    printf("What's your guess?:\n");
+    scanf("%d", &guess);
 
     //printf("Your guess is %d. And the secret number is %d. \n", chute, secretNumber);
-    printf("Your guess is %d.\n", chute);
+    printf("Your guess was %d.\n", guess);
     
     return 0;
 
