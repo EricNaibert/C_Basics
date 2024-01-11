@@ -2,19 +2,37 @@
 
 int main() {
 
+    int secretNumber = 42;
+    int guess;
+    int tries = 1;
+
     printf("|||||||||||||||||||||||||||||||||||\n");
     printf("|| Welcome to the Guessing Game! ||\n");
     printf("|||||||||||||||||||||||||||||||||||\n");
 
-    int secretNumber = 42;
-    int guess;
+    while(1) {
 
-    printf("What's your guess?:\n");
-    scanf("%d", &guess);
+        printf("\nWhat's your guess? ");
+        scanf("%d", &guess);
 
-    //printf("Your guess is %d. And the secret number is %d. \n", chute, secretNumber);
-    printf("Your guess was %d.\n", guess);
-    
-    return 0;
+        if(guess < 0) {
+            printf("You can't enter negative numbers!");
+            continue;
+        }
+        
+        if(guess == secretNumber) {
+            printf("\nCongratulations! Your guessed the secret number %d!\n", secretNumber);
+            printf("\nYour number of tries was: %d!", tries);
+            break;
+
+        } else if(guess < secretNumber) {
+            printf("\nYour guess was wrong! The secret number is higher!\n");
+
+        } else {
+            printf("\nYour guess was wrong! The secret number is lower!\n");      
+        }
+
+        tries++;
+    }
 
 }
