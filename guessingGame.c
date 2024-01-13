@@ -1,8 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
 
-    int secretNumber = 42;
+    int seconds = time(0);
+    srand(seconds);
+
+    int secretNumber = rand() % 100;
     int guess;
     int tries = 1;
     double points = 1000;
@@ -34,7 +39,7 @@ int main() {
             printf("\nYour guess was wrong! The secret number is lower!\n");    
         }
 
-        double lostPoints = (guess - secretNumber) / 2.0;
+        double lostPoints = abs(guess - secretNumber) / (double)2;
         points = points - lostPoints;
 
         tries++;
