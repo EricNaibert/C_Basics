@@ -11,15 +11,37 @@ int main() {
     int win = 0;
     int hang = 0;
 
+    char letters[26];
+    char tries = 0;
+
     do {
-        char guess;
-        scanf("%c", &guess);
 
         for(int i = 0; i < strlen(secretWord); i++) {
-            if(secretWord[i] == guess) {
-                printf("Your guess is right! %c is on %d\n", secretWord[i], i);
+
+            int found = 0;
+
+            for(int j = 0; j < tries; j++) {
+                if(letters[j] == secretWord[i]) {
+                    found = 1;
+                    break;
+                }
+            }
+
+            if(found) {
+                printf("%c ", secretWord[i]);
+            } else {
+                printf("_ ");
             }
         }
+
+        printf("\n");
+        char guess;
+        scanf(" %c", &guess);
+
+        letters[tries] = guess;
+        tries++;    
+
+        
 
     } while (!win && !hang);
     
