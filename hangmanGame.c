@@ -1,9 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
+void printTitle() {
+    printf("\n _  _   _   _  _  ___ __  __   _   _  _    ___   _   __  __ ___ ");
+    printf("\n| || | /_\\ | \\| |/ __|  \\/  | /_\\ | \\| |  / __| /_\\ |  \\/  | __|");
+    printf("\n| __ |/ _ \\| .` | (_ | |\\/| |/ _ \\| .` | | (_ |/ _ \\| |\\/| | _| ");
+    printf("\n|_||_/_/ \\_\\_|\\_|\\___|_|  |_/_/ \\_\\_|\\_|  \\___/_/ \\_\\_|  |_|___|");
+    printf("\nEnter a letter to guess the secret word:\n");
+}
+
 int main() {
 
-    printf("HANGMAN\n");
+    printTitle();
     
     char secretWord[20];
     sprintf(secretWord, "MELANCIA");
@@ -41,9 +49,6 @@ int main() {
         letters[tries] = guess;
         tries++;    
 
-        
-
     } while (!win && !hang);
     
-
 }
