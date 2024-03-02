@@ -9,6 +9,14 @@ void printTitle() {
     printf("\nEnter a letter to guess the secret word:\n");
 }
 
+void scanTry(char letters[26], int tries) {
+    printf("\n");
+    char guess;
+    scanf(" %c", &guess);
+
+    letters[tries] = guess;  
+}
+
 int main() {
 
     printTitle();
@@ -42,12 +50,8 @@ int main() {
             }
         }
 
-        printf("\n");
-        char guess;
-        scanf(" %c", &guess);
-
-        letters[tries] = guess;
-        tries++;    
+        scanTry(letters, tries);
+        tries++;  
 
     } while (!win && !hang);
     
